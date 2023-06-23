@@ -1,0 +1,59 @@
+[
+  {
+    "request": {
+      "_bodyUsed": false,
+      "id": "61333285-d7a5-492d-8b50-e3521f1e98df",
+      "url": "https://api.github.com/orgs/nodejs",
+      "method": "GET",
+      "headers": {
+        "accept": "application/json",
+        "content-type": "application/json"
+      },
+      "credentials": "include",
+      "_body": {},
+      "cache": "default",
+      "destination": "",
+      "integrity": "",
+      "keepalive": false,
+      "mode": "cors",
+      "priority": "auto",
+      "redirect": "follow",
+      "referrer": "",
+      "referrerPolicy": "no-referrer",
+      "cookies": {}
+    },
+    "response": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "access-control-expose-headers": "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset",
+        "cache-control": "public, max-age=60, s-maxage=60",
+        "content-encoding": "gzip",
+        "content-length": "435",
+        "content-security-policy": "default-src 'none'",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Mon, 26 Jun 2023 14:07:38 GMT",
+        "etag": "W/\"399b1fb0f03203671165a3b3c33e973353a9ce52dfcf6a061e304e62c6bb6961\"",
+        "last-modified": "Sun, 04 Jun 2023 11:21:35 GMT",
+        "referrer-policy": "origin-when-cross-origin, strict-origin-when-cross-origin",
+        "server": "GitHub.com",
+        "strict-transport-security": "max-age=31536000; includeSubdomains; preload",
+        "vary": "Accept, Accept-Encoding, Accept, X-Requested-With",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "deny",
+        "x-github-api-version-selected": "2022-11-28",
+        "x-github-media-type": "github.v3",
+        "x-github-request-id": "DA71:0D31:3FFDA04:414A717:64999BAA",
+        "x-ratelimit-limit": "60",
+        "x-ratelimit-remaining": "50",
+        "x-ratelimit-reset": "1687790738",
+        "x-ratelimit-resource": "core",
+        "x-ratelimit-used": "10",
+        "x-xss-protection": "0"
+      },
+      "body": "{\"login\":\"nodejs\",\"id\":9950313,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjk5NTAzMTM=\",\"url\":\"https://api.github.com/orgs/nodejs\",\"repos_url\":\"https://api.github.com/orgs/nodejs/repos\",\"events_url\":\"https://api.github.com/orgs/nodejs/events\",\"hooks_url\":\"https://api.github.com/orgs/nodejs/hooks\",\"issues_url\":\"https://api.github.com/orgs/nodejs/issues\",\"members_url\":\"https://api.github.com/orgs/nodejs/members{/member}\",\"public_members_url\":\"https://api.github.com/orgs/nodejs/public_members{/member}\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/9950313?v=4\",\"description\":\"\",\"name\":\"Node.js\",\"company\":null,\"blog\":\"https://nodejs.org\",\"location\":null,\"email\":null,\"twitter_username\":\"nodejs\",\"is_verified\":true,\"has_organization_projects\":true,\"has_repository_projects\":true,\"public_repos\":203,\"public_gists\":0,\"followers\":8436,\"following\":0,\"html_url\":\"https://github.com/nodejs\",\"created_at\":\"2014-11-25T17:10:50Z\",\"updated_at\":\"2023-06-04T11:21:35Z\",\"type\":\"Organization\"}"
+    }
+  }
+]
