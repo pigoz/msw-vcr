@@ -1,6 +1,6 @@
 {
   "name": "msw-vcr",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "msw wrapper to record and replay network requests",
   "scripts": {
     "build": "tsup --clean",
