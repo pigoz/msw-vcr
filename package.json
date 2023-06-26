@@ -1,7 +1,7 @@
 {
   "name": "msw-vcr",
   "version": "0.0.0",
-  "description": "msw extension to record and replay network requests",
+  "description": "msw wrapper to record and replay network requests",
   "scripts": {
     "build": "tsup --clean",
     "circular": "skott --fileExtensions=.ts,.tsx --tsconfig=tsconfig.json --displayMode=raw --showCircularDependencies",
