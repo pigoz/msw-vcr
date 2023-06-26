@@ -7,7 +7,9 @@
     "circular": "skott --fileExtensions=.ts,.tsx --tsconfig=tsconfig.json --displayMode=raw --showCircularDependencies",
     "circular:viz": "skott --fileExtensions=.ts,.tsx --tsconfig=tsconfig.json",
     "test": "vitest",
-    "tc": "tsc --noEmit"
+    "tc": "tsc --noEmit",
+    "version": "changeset version && pnpm install --no-frozen-lockfile",
+    "release": "pnpm run build && changeset publish"
   },
   "keywords": [],
   "author": "",
