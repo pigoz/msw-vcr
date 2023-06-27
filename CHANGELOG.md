@@ -1,5 +1,11 @@
 # msw-vcr
 
+## 0.0.2
+
+### Patch Changes
+
+- [`072b803`](https://github.com/pigoz/msw-vcr/commit/072b8032f8ed9d6d4094e26680a1b6e2cb2896ea) Thanks [@pigoz](https://github.com/pigoz)! - fix imports
+
 ## 0.0.1
 
 ### Patch Changes
