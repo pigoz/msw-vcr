@@ -1,5 +1,11 @@
 # msw-vcr
 
+## 0.0.3
+
+### Patch Changes
+
+- [`fefc41d`](https://github.com/pigoz/msw-vcr/commit/fefc41d938a94a4d30193b5fe1782b54d3273932) Thanks [@pigoz](https://github.com/pigoz)! - fix(package): add publishConfig
+
 ## 0.0.2
 
 ### Patch Changes
