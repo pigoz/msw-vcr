@@ -39,5 +39,9 @@
     "side": [],
     "modules": [],
     "global": []
+  },
+  "publishConfig": {
+    "access": "public",
+    "directory": "dist"
   }
 }
