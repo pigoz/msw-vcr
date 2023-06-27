@@ -1,5 +1,11 @@
 # msw-vcr
 
+## 0.0.4
+
+### Patch Changes
+
+- [`be35ebb`](https://github.com/pigoz/msw-vcr/commit/be35ebbca564c1ef308f90ec8d5b678fec907470) Thanks [@pigoz](https://github.com/pigoz)! - fix package.json
+
 ## 0.0.3
 
 ### Patch Changes
