@@ -32,10 +32,7 @@
   },
   "exports": {
     ".": {
-      "require": "./build/cjs/index.js"
-    },
-    "./*": {
-      "require": "./build/cjs/*.js"
+      "require": "./dist/index.js"
     }
   },
   "config": {
