@@ -1,6 +1,6 @@
 {
   "name": "msw-vcr",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "sideEffects": false,
   "description": "msw wrapper to record and replay network requests",
   "scripts": {
