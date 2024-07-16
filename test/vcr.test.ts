@@ -3,7 +3,7 @@ import path from "node:path";
 import os from "node:os";
 import fs from "fs-extra";
 import { describe, expect, it } from "vitest";
-import { rest } from "msw";
+import { http, HttpResponse } from "msw";
 
 async function exampleGithubFetch() {
   return fetch("https://api.github.com/orgs/nodejs", {
@@ -43,7 +43,7 @@ describe("msw-vcr", () => {
       return vcr.cassette("github", exampleGithubFetch);
     }
 
-    await expect(throws).rejects.toThrowError("Failed to fetch");
+    await expect(throws).rejects.toThrowError("Cannot bypass a request");
   });
 
   it("uses cassette handlers", async () => {
@@ -65,8 +65,8 @@ describe("msw-vcr", () => {
         cassetteDir: cassetteDir,
         onUnhandledRequest: "error",
       },
-      rest.get("https://api.github.com/orgs/nodejs", (_req, res, ctx) =>
-        res(ctx.status(200), ctx.json({ foo: 1 }))
+      http.get("https://api.github.com/orgs/nodejs", () =>
+        HttpResponse.json({ foo: 1 }, { status: 200 })
       )
     );
 

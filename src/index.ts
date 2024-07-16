@@ -1,25 +1,27 @@
 import fs from "fs-extra";
 import path from "path";
 import { setupServer as mswSetupServerNode } from "msw/node";
-import { RequestHandler, rest } from "msw";
+import { RequestHandler, HttpResponse, http } from "msw";
 
 function makeHandlers(existingJson: unknown[]): RequestHandler[] {
   const methods = {
-    GET: rest.get,
-    POST: rest.post,
-    PUT: rest.put,
-    DELETE: rest.delete,
-    OPTIONS: rest.options,
-    HEAD: rest.head,
-    PATCH: rest.patch,
+    GET: http.get,
+    POST: http.post,
+    PUT: http.put,
+    DELETE: http.delete,
+    OPTIONS: http.options,
+    HEAD: http.head,
+    PATCH: http.patch,
   };
 
   return existingJson.map((handler: any) => {
     const method = handler.request.method as keyof typeof methods;
     const builder = methods[method];
 
-    return builder(handler.request.url, (_req, res, ctx) =>
-      res(ctx.status(handler.response.status), ctx.body(handler.response.body))
+    return builder(handler.request.url, () =>
+      HttpResponse.json(handler.response.body, {
+        status: handler.response.status,
+      })
     );
   });
 }
@@ -44,9 +46,9 @@ export function setupServer(config: Config, ...handlers: RequestHandler[]) {
       ...handlers
     );
 
-    server.events.on("request:start", (request) => {
+    server.events.on("request:start", ({ requestId, request }) => {
       // Record every dispatched request.
-      requests.set(request.id, request);
+      requests.set(requestId, request);
     });
 
     // server.events.on("request:match", (request) => {
@@ -61,16 +63,16 @@ export function setupServer(config: Config, ...handlers: RequestHandler[]) {
     // to the "setupServer" call, all responses will be
     // bypassed (performed as-is). This will allow us to
     // collect the actual responses.
-    server.events.on("response:bypass", (response_, requestId) => {
+    server.events.on("response:bypass", ({ response, requestId }) => {
       const request_ = requests.get(requestId);
 
       const request = JSON.parse(JSON.stringify(request_));
-      request.headers = request_.headers.raw();
+      request.headers = request_.headers;
 
-      const response = JSON.parse(JSON.stringify(response_));
-      response.headers = response_.headers.raw();
+      const response_ = JSON.parse(JSON.stringify(response));
+      response_.headers = response.headers;
 
-      transactions.add({ request, response });
+      transactions.add({ request, response: response_ });
     });
 
     function write() {
